@@ -31,7 +31,7 @@ function RecipeCard() {
           {/* Summary */}
           <p className="recipeSummary" dangerouslySetInnerHTML={{__html: recipe.summary}}></p>
           {/* Ingredients */}
-          <Ingredients/>
+          <Ingredients ingredients={recipe.extendedIngredients || []} />
           {/* Instrucions */}
       </div>
   )
