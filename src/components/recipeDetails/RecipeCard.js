@@ -18,6 +18,8 @@ function RecipeCard() {
         const response = await fetch(`https://api.spoonacular.com/recipes/${recipeID}/information?apiKey=${API_KEY}`);
         let recipeInfo = await response.json();
         setRecipe(recipeInfo);
+        console.log(recipeInfo);
+
       }
   return (
       <div className='recipeCard'>
@@ -33,6 +35,7 @@ function RecipeCard() {
           {/* Ingredients */}
           <Ingredients ingredients={recipe.extendedIngredients || []} />
           {/* Instrucions */}
+          {recipe.instructions}
       </div>
   )
 }
